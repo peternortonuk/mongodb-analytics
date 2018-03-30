@@ -19,6 +19,13 @@
 
 ## install mongodb enterprise
 #### https://www.mongodb.com/download-center#enterprise
+#### shell is here:
+#### C:\Program Files\MongoDB\Server\3.6\bin\mongo.exe
+#### database server is here:
+#### C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe
+#### add this location to 'system environment variable' PATH 
+#### apply to 'system' not 'user' path variable and make it highest priority
+#### so copy this: C:\Program Files\MongoDB\Server\3.6\bin
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
