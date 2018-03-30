@@ -18,6 +18,7 @@
 ####        └── notebooks
 
 ## install mongodb enterprise
+#### https://www.mongodb.com/download-center#enterprise
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
