@@ -19,4 +19,17 @@
 ## install mongodb enterprise
 
 ## set up atlas
+#### https://www.mongodb.com/cloud/atlas
+#### login: peternorton99@yahoo.com.au
+#### cluster name: mflix
+#### cluster user: analytics
+#### cluster password: analytics-password
+
+## start jupyter notebook
+#### from this folder
+#### C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks
+#### start a jupyter notebook server
+#### >> jupyter notebook
+#### then interact with notebook here
+#### http://localhost:8888/
 
