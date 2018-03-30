@@ -1,7 +1,8 @@
 # coursera
 #### https://www.coursera.org/learn/introduction-mongodb
+#### https://www.coursera.org/learn/introduction-mongodb/supplement/OwBDM/setting-up-your-course-environment
 
-## set up environment
+## set up environment described here
 #### >> conda create --name intro-to-mongodb
 #### activate the environment
 #### >> activate intro-to-mongodb
@@ -12,7 +13,7 @@
 ## set up git hub repository
 #### C:\dev\code\mongodb-analytics
 #### with the folder structure
-####    └── intro-to-mongodb
+####     └── intro-to-mongodb
 ####        ├── mflix
 ####        └── notebooks
 
