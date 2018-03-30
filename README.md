@@ -2,7 +2,7 @@
 #### https://www.coursera.org/learn/introduction-mongodb
 #### https://www.coursera.org/learn/introduction-mongodb/supplement/OwBDM/setting-up-your-course-environment
 
-## set up environment described here
+## set up conda environment
 #### >> conda create --name intro-to-mongodb
 #### activate the environment
 #### >> activate intro-to-mongodb
