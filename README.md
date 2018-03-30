@@ -3,8 +3,9 @@
 
 ## set up environment
 #### >> conda create --name intro-to-mongodb
-#### activate the environment then do:
+#### activate the environment
 #### >> activate intro-to-mongodb
+#### then install
 #### >> conda install python=3.6
 #### >> pip install pymongo dnspython
 
