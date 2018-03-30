@@ -25,7 +25,7 @@
 #### C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe
 #### add this location to 'system environment variable' PATH 
 #### apply to 'system' not 'user' path variable and make it highest priority
-#### so copy this: C:\Program Files\MongoDB\Server\3.6\bin
+#### so copy this: C:\Program Files\MongoDB\Server\3.6\bin;
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
