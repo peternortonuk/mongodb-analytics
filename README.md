@@ -19,6 +19,16 @@
 
 ## install mongodb enterprise
 #### https://www.mongodb.com/download-center#enterprise
+#### shell is here:
+#### C:\Program Files\MongoDB\Server\3.6\bin\mongo.exe
+#### database server is here:
+#### C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe
+#### add this location to 'system environment variable' PATH 
+#### apply to 'system' not 'user' path variable and make it highest priority
+#### so copy this: C:\Program Files\MongoDB\Server\3.6\bin;
+#### test my running at the command prompts
+#### >> mongo --nodb
+#### >> quit()
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
@@ -34,4 +44,6 @@
 #### >> jupyter notebook
 #### then interact with notebook here
 #### http://localhost:8888/
+#### if folder isnt visible then specify as follows (use double quotes)
+#### jupyter notebook --notebook-dir "C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks"
 
