@@ -44,9 +44,6 @@
 #### >> jupyter notebook
 #### then interact with notebook here
 #### http://localhost:8888/
-#### if folder isnt visible then at command prompt
-#### >>jupyter notebook --generate-config
-#### on this machine location is here
-#### C:\Users\pnorton\.jupyter\jupyter_notebook_config.py
-#### then search for the following line: #c.NotebookApp.notebook_dir = ''
+#### if folder isnt visible then specify as follows (use double quotes)
+#### jupyter notebook --notebook-dir "C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks"
 
