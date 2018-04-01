@@ -30,6 +30,9 @@
 #### >> mongo --nodb
 #### >> quit()
 
+## download compass
+#### https://www.mongodb.com/download-center?jmp=nav#compass
+
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
 #### login: peternorton99@yahoo.com.au
