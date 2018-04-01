@@ -37,6 +37,11 @@
 #### cluster user: analytics
 #### cluster password: analytics-password
 
+## import data into atlas
+#### >>mongoimport --type csv --headerline --db mflix --collection movies_initial 
+#### --host "mflix-shard-0/mflix-shard-00-00-heksn.mongodb.net:27017,mflix-shard-00-01-heksn.mongodb.net:27017,mflix-shard-00-02-heksn.mongodb.net:27017" 
+#### --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
+
 ## start jupyter notebook
 #### from this folder
 #### C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks
