@@ -30,9 +30,6 @@
 #### >> mongo --nodb
 #### >> quit()
 
-## download compass
-#### https://www.mongodb.com/download-center?jmp=nav#compass
-
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
 #### login: peternorton99@yahoo.com.au
@@ -40,11 +37,16 @@
 #### cluster user: analytics
 #### cluster password: analytics-password
 
-## import data into atlas
+## import data into atlas (movies_initial.csv)
 #### template
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
 #### with parameters
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "mflix-shard-0/mflix-shard-00-00-heksn.mongodb.net:27017,mflix-shard-00-01-heksn.mongodb.net:27017,mflix-shard-00-02-heksn.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
+
+## set up compass
+#### https://www.mongodb.com/download-center?jmp=nav#compass
+#### go to atlas and get the connection string
+#### go back to compass and connect to host
 
 ## start jupyter notebook
 #### from this folder
