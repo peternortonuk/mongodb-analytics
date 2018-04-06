@@ -16,6 +16,8 @@
 ####     └── intro-to-mongodb
 ####        ├── mflix
 ####        └── notebooks
+#### and then clone from root
+#### >> git clone https://github.com/peternortonuk/mongodb-analytics.git
 
 ## install mongodb enterprise
 #### https://www.mongodb.com/download-center#enterprise
