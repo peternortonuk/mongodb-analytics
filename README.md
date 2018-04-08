@@ -31,6 +31,9 @@
 #### test my running at the command prompts
 #### >> mongo --nodb
 #### >> quit()
+#### confirm version installed
+#### >> pip freeze | grep pymongo
+#### >> pymongo==3.6.1
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
