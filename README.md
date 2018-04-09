@@ -8,7 +8,10 @@
 #### >> activate intro-to-mongodb
 #### then install
 #### >> conda install python=3.6
-#### >> pip install pymongo dnspython
+#### if within an enterprise then go to external channel
+#### >> conda install python=3.6 -c defaults
+#### >> conda install pymongo dnspython -c defaults
+#### >> conda install jupyter -c defaults
 
 ## set up git hub repository
 #### C:\dev\code\mongodb-analytics
