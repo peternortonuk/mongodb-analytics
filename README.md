@@ -12,6 +12,9 @@
 #### >> conda install jupyter
 #### if within an enterprise then go to external channel
 #### >> conda install foo -c defaults
+#### then for mflix project
+#### >> conda install Flask==0.12.2
+#### >> conda install Flask-Login==0.4.0
 
 ## set up git hub repository
 #### C:\dev\code\mongodb-analytics
