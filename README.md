@@ -62,6 +62,14 @@
 
 ## connect to atlas using local mongo
 #### ![alt text](https://github.com/peternortonuk/mongodb-analytics/blob/master/mongodb.JPG)
+#### from here
+#### C:\Program Files\MongoDB\Server\3.4\bin
+#### start the local mongo db
+#### >> mongod
+#### confirm the version
+#### >> mongo --version
+#### copy the uri from atlas and modify password placeholder, then test the connection
+#### >> mongo "blahh" --ssl --authenticationDatabase admin --username analytics --password analytics-password
 
 ## set up compass
 #### https://www.mongodb.com/download-center?jmp=nav#compass
