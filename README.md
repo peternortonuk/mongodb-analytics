@@ -24,7 +24,7 @@
 ## install mongodb enterprise
 #### https://www.mongodb.com/download-center#enterprise
 #### add this location to 'system environment variable' PATH 
-#### C:\Program Files\MongoDB\Server\{version}\bin
+#### C:\Program Files\MongoDB\Server\\{version}\bin
 #### apply to 'system' not 'user' path variable and make it highest priority
 #### test by running at the command prompts
 #### >> mongo --nodb
