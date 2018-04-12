@@ -40,9 +40,11 @@
 #### confirm version installed
 #### >> pip freeze | grep pymongo
 #### >> pymongo==3.6.1
+#### note the following binaries:
+#### mongod.exe = server; mongo.exe = client
 
 ## set up mongodb environment
-#### mongodb is installed as part of enterprise but in order to use locally then:
+#### mongodb is installed as part of enterprise but in order to use local database then:
 #### https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 #### set up the mongodb environment ie create data directory
 #### C:\data\db
@@ -61,9 +63,8 @@
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "mflix-shard-0/mflix-shard-00-00-heksn.mongodb.net:27017,mflix-shard-00-01-heksn.mongodb.net:27017,mflix-shard-00-02-heksn.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
 
 ## connect to atlas using local mongo
-#### ![alt text](https://github.com/peternortonuk/mongodb-analytics/blob/master/mongodb.JPG)
 #### from here: C:\Program Files\MongoDB\Server\3.4\bin
-#### start the local mongo db
+#### start the local mongo db server
 #### >> mongod
 #### confirm the version
 #### >> mongo --version
