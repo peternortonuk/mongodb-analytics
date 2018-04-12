@@ -12,31 +12,34 @@
 #### >> conda install jupyter
 #### if within an enterprise then go to external channel
 #### >> conda install foo -c defaults
+#### then for mflix project
+#### >> conda install Flask==0.12.2
+#### >> conda install Flask-Login==0.4.0
 
 ## set up git hub repository
 #### C:\dev\code\mongodb-analytics
-#### with the folder structure
-####     └── intro-to-mongodb
-####        ├── mflix
-####        └── notebooks
-#### and then clone from root
+#### so clone from root with
 #### >> git clone https://github.com/peternortonuk/mongodb-analytics.git
 
 ## install mongodb enterprise
 #### https://www.mongodb.com/download-center#enterprise
-#### shell is here:
-#### C:\Program Files\MongoDB\Server\3.6\bin\mongo.exe
-#### database server is here:
-#### C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe
 #### add this location to 'system environment variable' PATH 
+#### C:\Program Files\MongoDB\Server\\{version}\bin
 #### apply to 'system' not 'user' path variable and make it highest priority
-#### so copy this: C:\Program Files\MongoDB\Server\3.6\bin;
-#### test my running at the command prompts
+#### test by running at the command prompts
 #### >> mongo --nodb
 #### >> quit()
 #### confirm version installed
 #### >> pip freeze | grep pymongo
 #### >> pymongo==3.6.1
+#### note the following binaries:
+#### mongod.exe = server; mongo.exe = client
+
+## set up mongodb environment
+#### mongodb is installed as part of enterprise but in order to use local database then:
+#### https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+#### set up the mongodb environment ie create data directory
+#### C:\data\db
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
@@ -45,8 +48,21 @@
 #### cluster user: analytics
 #### cluster password: analytics-password
 
+## test connection to atlas
+#### >> ping mflix-shard-00-01-heksn.mongodb.net
+#### >> telnet mflix-shard-00-01-heksn.mongodb.net 27017
+
+## connect to atlas using local mongodb server
+#### from here: C:\Program Files\MongoDB\Server\\{version}\bin
+#### start the local mongo db server
+#### >> mongod
+#### confirm the version
+#### >> mongo --version
+#### copy the uri from atlas and modify password placeholder, then test the connection
+#### >> mongo "blahh" --ssl --authenticationDatabase admin --username analytics --password analytics-password
+
 ## import data into atlas (movies_initial.csv)
-#### template
+#### from here: C:\Program Files\MongoDB\Server\\{version}\bin
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
 #### with parameters
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "mflix-shard-0/mflix-shard-00-00-heksn.mongodb.net:27017,mflix-shard-00-01-heksn.mongodb.net:27017,mflix-shard-00-02-heksn.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
