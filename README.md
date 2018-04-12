@@ -34,12 +34,18 @@
 #### add this location to 'system environment variable' PATH 
 #### apply to 'system' not 'user' path variable and make it highest priority
 #### so copy this: C:\Program Files\MongoDB\Server\3.6\bin;
-#### test my running at the command prompts
+#### test by running at the command prompts
 #### >> mongo --nodb
 #### >> quit()
 #### confirm version installed
 #### >> pip freeze | grep pymongo
 #### >> pymongo==3.6.1
+
+## set up mongodb environment
+#### mongodb is installed as part of enterprise
+#### but in order to use locally then
+#### set up the mongodb environment
+#### https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
