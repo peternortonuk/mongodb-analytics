@@ -42,10 +42,10 @@
 #### >> pymongo==3.6.1
 
 ## set up mongodb environment
-#### mongodb is installed as part of enterprise
-#### but in order to use locally then
-#### set up the mongodb environment
+#### mongodb is installed as part of enterprise but in order to use locally then:
 #### https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+#### set up the mongodb environment ie create data directory
+#### C:\data\db
 
 ## set up atlas
 #### https://www.mongodb.com/cloud/atlas
