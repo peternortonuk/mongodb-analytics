@@ -18,11 +18,7 @@
 
 ## set up git hub repository
 #### C:\dev\code\mongodb-analytics
-#### with the folder structure
-####     └── intro-to-mongodb
-####        ├── mflix
-####        └── notebooks
-#### and then clone from root
+#### so clone from root with
 #### >> git clone https://github.com/peternortonuk/mongodb-analytics.git
 
 ## install mongodb enterprise
