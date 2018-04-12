@@ -48,6 +48,10 @@
 #### cluster user: analytics
 #### cluster password: analytics-password
 
+## test connection to atlas
+#### >> ping mflix-shard-00-01-heksn.mongodb.net
+#### >> telnet mflix-shard-00-01-heksn.mongodb.net 27017
+
 ## import data into atlas (movies_initial.csv)
 #### from here: C:\Program Files\MongoDB\Server\\{version}\bin
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
