@@ -49,13 +49,13 @@
 #### cluster password: analytics-password
 
 ## import data into atlas (movies_initial.csv)
-#### from here: C:\Program Files\MongoDB\Server\{version}\bin
+#### from here: C:\Program Files\MongoDB\Server\\{version}\bin
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
 #### with parameters
 #### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "mflix-shard-0/mflix-shard-00-00-heksn.mongodb.net:27017,mflix-shard-00-01-heksn.mongodb.net:27017,mflix-shard-00-02-heksn.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
 
 ## connect to atlas using local mongo
-#### from here: C:\Program Files\MongoDB\Server\{version}\bin
+#### from here: C:\Program Files\MongoDB\Server\\{version}\bin
 #### start the local mongo db server
 #### >> mongod
 #### confirm the version
