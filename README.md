@@ -61,11 +61,12 @@
 #### copy the uri from atlas and modify password placeholder, then test the connection
 #### >> mongo "blahh" --ssl --authenticationDatabase admin --username analytics --password analytics-password
 
-## import data into atlas (movies_initial.csv)
-#### from here: C:\Program Files\MongoDB\Server\\{version}\bin
-#### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
-#### with parameters
-#### >>mongoimport --type csv --headerline --db mflix --collection movies_initial --host "mflix-shard-0/mflix-shard-00-00-heksn.mongodb.net:27017,mflix-shard-00-01-heksn.mongodb.net:27017,mflix-shard-00-02-heksn.mongodb.net:27017" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
+## import data from csv
+#### go to location of file; movies_initial.csv
+#### import into atlas
+#### >> mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
+#### import into local db
+#### >> mongoimport -d mflix -c movies_initial --type csv --file movies_initial.csv --headerline
 
 ## set up compass
 #### https://www.mongodb.com/download-center?jmp=nav#compass
