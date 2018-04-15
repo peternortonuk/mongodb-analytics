@@ -59,7 +59,7 @@
 #### confirm the version
 #### >> mongo --version
 #### copy the uri from atlas and modify password placeholder, then test the connection
-#### >> mongo "blahh" --ssl --authenticationDatabase admin --username analytics --password analytics-password
+#### >> mongo "uri" --ssl --authenticationDatabase admin --username analytics --password analytics-password
 
 ## import data from csv
 #### go to location of file. here we're using this file: movies_initial.csv
