@@ -62,10 +62,10 @@
 #### >> mongo "blahh" --ssl --authenticationDatabase admin --username analytics --password analytics-password
 
 ## import data from csv
-#### go to location of file; movies_initial.csv
-#### import into atlas
+#### go to location of file. here we're using this file: movies_initial.csv
+### import into atlas:
 #### >> mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
-#### import into local db
+### import into local db:
 #### >> mongoimport -d mflix -c movies_initial --type csv --file movies_initial.csv --headerline
 
 ## set up compass
