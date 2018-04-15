@@ -70,8 +70,8 @@
 
 ## set up compass
 #### https://www.mongodb.com/download-center?jmp=nav#compass
-#### go to atlas and get the connection string
-#### go back to compass and connect to host
+#### go to db and get the connection string; return to compass and connect to host
+#### for example, connect to atlas or localdb
 
 ## start jupyter notebook
 #### from this folder
