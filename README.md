@@ -66,12 +66,15 @@
 ### import into atlas:
 #### >> mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv
 ### import into local db:
-#### >> mongoimport -d mflix -c movies_initial --type csv --file movies_initial.csv --headerline
+#### >> mongoimport --db mflix --collection movies_initial --type csv --file movies_initial.csv --headerline
+#### >> mongoimport --db cleansing --collection people-raw --file people-raw.json
 
 ## set up compass
 #### https://www.mongodb.com/download-center?jmp=nav#compass
 #### go to db and get the connection string; return to compass and connect to host
 #### for example, connect to atlas or localdb
+#### GOTCHA: if you get error message topology destroyed; then just restart the connection
+####    the database does persist after server is closed
 
 ## start jupyter notebook
 #### from this folder
