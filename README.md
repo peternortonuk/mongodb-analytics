@@ -10,6 +10,7 @@
 #### >> conda install python=3.6
 #### >> conda install pymongo dnspython
 #### >> conda install jupyter
+#### >> conda install matplotlib
 #### if within an enterprise then go to external channel
 #### >> conda install foo -c defaults
 #### then for mflix project
