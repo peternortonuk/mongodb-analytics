@@ -16,6 +16,10 @@
 #### then for mflix project
 #### >> conda install Flask==0.12.2
 #### >> conda install Flask-Login==0.4.0
+#### and stupid question that requires python 2.7 means create a new new environment as follows, from root:
+#### >> conda create -n intro-to-mongodb27 python=2.7 anaconda
+#### >> activate intro-to-mongodb27
+#### >> conda install pymongo dnspython jupyter matplotlib basemap
 
 ## set up git hub repository
 #### C:\dev\code\mongodb-analytics
