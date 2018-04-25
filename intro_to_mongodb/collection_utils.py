@@ -5,53 +5,48 @@ from notebooks.connect import uri
 
 def copy_collection(client, origin_collection, destination_collection):
 
-    origin = origin_collection.split('.')
-    origin_db = origin[0]
-    origin_coll = origin[1]
+    origin = split_db_name(origin_collection)
+    origin_db = client[origin['database']]
+    origin_coll = origin_db[origin['collection']]
 
-    destination = destination_collection.split('.')
-    destination_coll = destination[1]
+    destination = split_db_name(destination_collection)
 
-    pipeline = [ {"$match": {}},
-                 {"$out": destination_coll},
-    ]
+    pipeline = [{"$match": {}},
+                {"$out": destination['collection']},
+                ]
 
-    db = client[origin_db]
-    c = db[origin_coll]
-
-    c.aggregate(pipeline)
-
+    origin_coll.aggregate(pipeline)
 
 
 def drop_collection(client, drop_collection):
-
-    drop_ = drop_collection.split('.')
-    drop_db = drop_[0]
-    drop_coll = drop_[1]
-    db = client[drop_db]
-    c = db[drop_coll]
+    drop = split_db_name(drop_collection)
+    db = client[drop['database']]
+    c = db[drop['collection']]
     c.drop()
 
+
+def split_db_name(collection_name):
+    collection_list = collection_name.split('.')
+    return {'database': collection_list[0],
+            'collection': collection_list[1]}
 
 
 def main_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--drop", help='collection name')
     parser.add_argument("-c", "--copy", nargs='+', help='origin_collection, destination_collection')
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 if __name__ == '__main__':
 
     args = main_args()
+    client = MongoClient(uri('3.4'))
 
     if args.drop:
-        client = MongoClient(uri('3.4'))
         drop_collection(client, args.drop)
 
     if args.copy:
-        client = MongoClient(uri('3.4'))
         copy_collection(client, args.copy[0], args.copy[1])
 
 '''
