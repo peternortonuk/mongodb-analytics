@@ -26,7 +26,12 @@ def drop_collection(client, drop_collection):
 
 
 def drop_database(client, drop_database):
-    client.drop_database(drop_database)
+    # no method exists to drop the db; instead drop every collection
+    db = client[drop_database]
+    collections = db.collection_names()
+    for collection in collections:
+        full_name = drop_database + '.' + collection
+        drop_collection(client, full_name)
 
 
 def split_db_name(collection_name):
