@@ -3,15 +3,21 @@ from datetime import datetime
 import re
 from notebooks.connect import uri
 
-# Replace XXXX with your connection URI from the Atlas UI
-client = MongoClient(uri('3.6'))
 
+# connect and define the collection
+client = MongoClient(uri('3.4'))
+movies_collection = client.mflix.movies_clean
+
+# regex search definition for number of minutes
 runtime_pat = re.compile(r'([0-9]+) min')
 
+# define size of batch update
 batch_size = 1000
 updates = []
 count = 0
-for movie in client.mflix.movies.find({}):
+
+
+for movie in movies_collection.find({}):
 
     fields_to_set = {}
     fields_to_unset = {}
@@ -82,9 +88,9 @@ for movie in client.mflix.movies.find({}):
 
     count += 1
     if count == batch_size:
-        client.mflix.movies.bulk_write(updates)
+        movies_collection.bulk_write(updates)
         updates = []
         count = 0
 
 if updates:
-    client.mflix.movies_clean.bulk_write(updates)
+    movies_collection.bulk_write(updates)

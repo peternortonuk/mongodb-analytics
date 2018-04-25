@@ -2,7 +2,11 @@ from pymongo import MongoClient
 from notebooks.connect import uri
 import pprint
 
+# =================================
+# connect and define the collection
+
 client = MongoClient(uri('3.4'))
+movies_collection = client.mflix.movies_initial
 
 
 # =================================
@@ -43,13 +47,16 @@ pipeline = pipeline1
 # =================================
 # run the query
 
-results = client.mflix.movies_initial.aggregate(pipeline)
-pprint.pprint(list(results))
+results = movies_collection.aggregate(pipeline)
+pprint.pprint(list(results)[0])
 
 
 # ==================================================================
 # ==================================================================
 # reshaping
+
+# pymongo.errors.OperationFailure: Unrecognized expression '$dateFromString'
+# when using < mongoDB v3.6
 
 pipeline = [
     {
@@ -117,5 +124,5 @@ pipeline = [
 # =================================
 # run the query
 
-results = client.mflix.movies_initial.aggregate(pipeline)
+results = movies_collection.aggregate(pipeline)
 pprint.pprint(list(results))
