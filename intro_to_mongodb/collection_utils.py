@@ -25,6 +25,10 @@ def drop_collection(client, drop_collection):
     c.drop()
 
 
+def drop_database(client, drop_database):
+    client.drop_database(drop_database)
+
+
 def split_db_name(collection_name):
     collection_list = collection_name.split('.')
     return {'database': collection_list[0],
@@ -33,8 +37,9 @@ def split_db_name(collection_name):
 
 def main_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--drop", help='collection name')
-    parser.add_argument("-c", "--copy", nargs='+', help='origin_collection, destination_collection')
+    parser.add_argument("-dc", "--dropcoll", help='collection name')
+    parser.add_argument("-cc", "--copycoll", nargs='+', help='origin_collection, destination_collection')
+    parser.add_argument("-dd", "--dropdb", help='database name')
     return parser.parse_args()
 
 
@@ -43,17 +48,21 @@ if __name__ == '__main__':
     args = main_args()
     client = MongoClient(uri('3.4'))
 
-    if args.drop:
-        drop_collection(client, args.drop)
+    if args.dropcoll:
+        drop_collection(client, args.dropcoll)
 
-    if args.copy:
-        copy_collection(client, args.copy[0], args.copy[1])
+    if args.copycoll:
+        copy_collection(client, args.copycoll[0], args.copycoll[1])
+
+    if args.dropdb:
+        drop_database(client, args.dropdb)
 
 '''
 origin_collection = 'mflix.movies_initial'
 destination_collection = 'mflix.movies_clean'
 drop_collection = destination_collection
 
-python collection_utils.py --drop mflix.movies_clean
-python collection_utils.py --copy mflix.movies_initial mflix.movies_clean
+python collection_utils.py --dropcoll mflix.movies_clean
+python collection_utils.py --copycoll mflix.movies_initial mflix.movies_clean
+python collection_utils.py --dropdb test
 '''
