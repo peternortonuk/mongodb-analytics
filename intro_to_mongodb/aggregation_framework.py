@@ -87,11 +87,10 @@ pipeline = [
             'released': {
                 '$cond': {
                     'if': {'$ne': ["$released", ""]},
-                    'then': {
-                        '$dateFromString': {
-                            'dateString': "$released"
-                        }
-                    },
+                    'then': "$released",
+                        # '$dateFromString': {
+                        #     'dateString': "$released"
+                        # }
                     'else': ""}},
             'runtime': 1,
             'poster': 1,
@@ -106,13 +105,14 @@ pipeline = [
             'lastUpdated': {
                 '$cond': {
                     'if': {'$ne': ["$lastupdated", ""]},
-                    'then': {
-                        '$dateFromString': {
-                            'dateString': "$lastupdated",
-                            'timezone': "America/New_York"
-                        }
+                    'then': "$lastupdated",
+                             'else': ""}
+                        # '$dateFromString': {
+                        #     'dateString': "$lastupdated",
+                        #     'timezone': "America/New_York"
+                        #}
                     },
-                    'else': ""}}
+
         }
     },
     {
