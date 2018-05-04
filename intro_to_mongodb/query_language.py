@@ -25,50 +25,59 @@ clean_collection = client.mflix.movies_clean
 # =========================
 # movies_initial
 
-projection = {'title': 1, 'language': 1, '_id': 0}
-projection = None
-query = {'language': 'Korean, English'}
+collection = initial_collection
 
-# string must match exactly
-projection1 = {'_id': 0, 'language': 1}
-filter1 = {'language': 'Korean, English'}
+# string must match exactly; show all columns
+projection1 = None
+query1 = {'language': 'Korean, English'}
+
+# select some columns to display; define a sort key
+projection2 = {'title': 1, 'language': 1, '_id': 0}
+query2 = {'language': 'Korean, English'}
+sort_key2 = 'languages'
+
+# choose parameters
+projection = projection1
+query = query1
+sort_key = sort_key2
+
+# run the query
+results = collection.find(query, projection).sort(sort_key, DESCENDING)
 
 
 # =========================
 # movies_clean
 
+collection = clean_collection
+
 # must contain these values in exactly this order
-projection2 = {'_id': 0, 'languages': 1}
-filter2 = {'languages': ['Korean', 'English']}
+projection1 = {'_id': 0, 'languages': 1}
+query1 = {'languages': ['Korean', 'English']}
 
 # must contain these values but without regard to order or other elements in the array
-filter3 = {'languages': {'$all': ['Korean', 'English']}}
+query2 = {'languages': {'$all': ['Korean', 'English']}}
 
 # must contain two elements but can be in any order
 # use implicit logical AND operator when using a comma separated list of expressions
-filter4 = {'languages': {
+query3 = {'languages': {
     '$all': ['Korean', 'English'], '$size': 2,
     }}
 
 # an explicit AND with the $and operator is necessary when the same field or operator has to be specified in multiple expressions.
 # doesnt work; i think this is a bug
-filter5 = {'&and': [
+query4 = {'&and': [
     {'languages': {'$all': ['English', 'German']}},
     {'languages': {'$size': 2}},
     ]
 }
-# =================================
-# choose the collection, filter and projection
 
-filter = filter4
+# choose parameters
+query = query4
 projection = projection2
-collection = clean_collection
 sort_key = 'languages'
 
-# =================================
 # run the query
-
-results = collection.find(filter, projection).sort(sort_key, DESCENDING)
+results = collection.find(query, projection).sort(sort_key, DESCENDING)
 length = 20
 results = results[:length]
 for result in results:
