@@ -2,6 +2,15 @@ from pymongo import MongoClient, DESCENDING
 from notebooks.connect import uri
 import pprint
 
+'''
+=================================
+reference:
+https://docs.mongodb.com/manual/reference/method/db.collection.find/
+db.collection.find(query, projection)
+=================================
+'''
+
+
 # =================================
 # connect and define the collection
 
@@ -12,8 +21,13 @@ clean_collection = client.mflix.movies_clean
 # =================================
 # projection and filter
 
+
 # =========================
 # movies_initial
+
+projection = {'title': 1, 'language': 1, '_id': 0}
+projection = None
+query = {'language': 'Korean, English'}
 
 # string must match exactly
 projection1 = {'_id': 0, 'language': 1}
@@ -60,4 +74,16 @@ results = results[:length]
 for result in results:
     #print(type(result['language']))
     pprint.pprint(result)
+
+results = collection.find(query, projection).limit(3)
+pprint.pprint(list(results))
+
+
+# =================================
+# work with results cursor
+
+titles = []
+for row in results:
+    titles.append(row['title'])
+pprint.pprint(titles)
 

@@ -2,6 +2,14 @@ from pymongo import MongoClient
 from notebooks.connect import uri
 import pprint
 
+'''
+=================================
+reference:
+https://docs.mongodb.com/manual/core/aggregation-pipeline/
+=================================
+'''
+
+
 # =================================
 # connect and define the collection
 
