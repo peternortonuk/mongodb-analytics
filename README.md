@@ -22,14 +22,14 @@ mongod.exe = server; mongo.exe = client
 mongodb is installed as part of enterprise but in order to use local database then:  
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/  
 set up the mongodb environment ie create data directory  
-C:\data\db  
+>C:\data\db  
   
 ## set up atlas
 https://www.mongodb.com/cloud/atlas  
 login: peternorton99@yahoo.com.au  
-cluster name: mflix  
-cluster user: analytics  
-cluster password: analytics-password  
+>cluster name: mflix  
+>cluster user: analytics  
+>cluster password: analytics-password  
   
 ## test connection to atlas
 `ping mflix-shard-00-01-heksn.mongodb.net`  
@@ -90,11 +90,11 @@ so clone from root with
   
 ## start jupyter notebook
 from this folder  
-C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks  
+>C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks  
 start a jupyter notebook server  
 `jupyter notebook`  
 then interact with notebook here  
 http://localhost:8888/  
 if folder isnt visible then specify as follows (use double quotes)  
-jupyter notebook --notebook-dir "C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks"  
+`jupyter notebook --notebook-dir "C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks"`  
 
