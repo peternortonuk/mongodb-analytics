@@ -1,7 +1,8 @@
 # coursera
 https://www.coursera.org/learn/introduction-mongodb  
 https://www.coursera.org/learn/introduction-mongodb/supplement/OwBDM/setting-up-your-course-environment  
-  
+
+# install and setup applications
 ## install mongodb enterprise
 https://www.mongodb.com/download-center#enterprise  
 add this location to 'system environment variable' PATH  
@@ -46,22 +47,14 @@ confirm the version
 copy the uri from atlas and modify password placeholder, then test the connection  
 `mongo "uri" --ssl --authenticationDatabase admin --username analytics --password analytics-password`  
   
-## import data from csv
-go to location of file. here we're using this file: movies_initial.csv  
-  
-### import into atlas:
-`mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv`  
-### import into local db:
-`mongoimport --db mflix --collection movies_initial --type csv --file movies_initial.csv --headerline`  
-`mongoimport --db cleansing --collection people-raw --file people-raw.json`  
-  
-## set up compass
+## install and set up compass
 https://www.mongodb.com/download-center?jmp=nav#compass  
 go to db and get the connection string; return to compass and connect to host  
 for example, connect to atlas or localdb  
 GOTCHA: if you get error message topology destroyed; then just restart the connection  
 the database does persist after server is closed  
-  
+
+# conda environment
 ## set up conda environment
 `conda create --name intro-to-mongodb`  
 activate the environment  
@@ -82,13 +75,26 @@ and stupid question that requires python 2.7 means create a new new environment 
 `conda create -n intro-to-mongodb27 python=2.7 anaconda`  
 `activate intro-to-mongodb27`  
 `conda install pymongo dnspython jupyter matplotlib basemap`  
-  
+
+# github
 ## set up git hub repository
 C:\dev\code\mongodb-analytics  
 so clone from root with  
 `git clone https://github.com/peternortonuk/mongodb-analytics.git`  
+
+# import data
+## import data from csv
+go to location of file. here we're using this file: movies_initial.csv  
   
-## start jupyter notebook
+### import into atlas:
+`mongoimport --type csv --headerline --db mflix --collection movies_initial --host "<CLUSTER>/<SEED_LIST>" --authenticationDatabase admin --ssl --username analytics --password analytics-password --file movies_initial.csv` 
+
+### import into local db:
+`mongoimport --db mflix --collection movies_initial --type csv --file movies_initial.csv --headerline`  
+`mongoimport --db cleansing --collection people-raw --file people-raw.json`  
+
+# jupyter notebook
+## start notebook
 from this folder  
 >C:\dev\code\mongodb-analytics\intro-to-mongodb\notebooks  
 start a jupyter notebook server  
