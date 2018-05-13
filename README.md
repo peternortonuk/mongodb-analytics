@@ -5,10 +5,9 @@ https://www.coursera.org/learn/introduction-mongodb/supplement/OwBDM/setting-up-
 ## install mongodb enterprise
 https://www.mongodb.com/download-center#enterprise  
 add this location to 'system environment variable' PATH  
-C:\Program Files\MongoDB\Server\\{version}\bin  
+  C:\Program Files\MongoDB\Server\\{version}\bin  
 apply to 'system' not 'user' path variable and make it highest priority  
 test by running at the command prompts  
-
 >> mongo --nodb  
 >> quit()  
 
@@ -40,8 +39,10 @@ cluster password: analytics-password
 from here: C:\Program Files\MongoDB\Server\\{version}\bin  
 start the local mongo db server  
 >> mongod  
+
 confirm the version  
 >> mongo --version  
+
 copy the uri from atlas and modify password placeholder, then test the connection  
 >> mongo "uri" --ssl --authenticationDatabase admin --username analytics --password analytics-password  
   
@@ -65,14 +66,18 @@ the database does persist after server is closed
 >> conda create --name intro-to-mongodb  
 activate the environment  
 >> activate intro-to-mongodb  
+
 then install the following  
 >> conda install python=3.6  
 >> conda install pymongo dnspython jupyter matplotlib  
+
 if within an enterprise then go to external channel  
 >> conda install foo -c defaults  
+
 then for mflix project  
 >> conda install Flask==0.12.2  
 >> conda install Flask-Login==0.4.0  
+
 and stupid question that requires python 2.7 means create a new new environment as follows, from root:  
 >> conda create -n intro-to-mongodb27 python=2.7 anaconda  
 >> activate intro-to-mongodb27  
