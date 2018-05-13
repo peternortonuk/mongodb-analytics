@@ -8,11 +8,14 @@ add this location to 'system environment variable' PATH
 C:\Program Files\MongoDB\Server\\{version}\bin  
 apply to 'system' not 'user' path variable and make it highest priority  
 test by running at the command prompts  
+
 >> mongo --nodb  
 >> quit()  
+
 confirm version installed  
 >> pip freeze | grep pymongo  
 >> pymongo==3.6.1  
+
 note the following binaries:  
 mongod.exe = server; mongo.exe = client  
   
