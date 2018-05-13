@@ -55,11 +55,12 @@ GOTCHA: if you get error message topology destroyed; then just restart the conne
 the database does persist after server is closed  
 
 # conda environment
-## set up conda environment
+## create environment
 `conda create --name intro-to-mongodb`  
 activate the environment  
 `activate intro-to-mongodb`  
 
+## installations
 then install the following  
 `conda install python=3.6`  
 `conda install pymongo dnspython jupyter matplotlib`  
